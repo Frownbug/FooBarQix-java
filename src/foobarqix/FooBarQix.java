@@ -19,6 +19,23 @@ public class FooBarQix {
 					break;
 				}
 			}
+			String[] digits = number.split("");
+			for(String digit : digits) {
+				if(digit.equals(Integer.toString(replacee))) {
+					//repeated code
+					switch(replacee) {
+					case 3:
+						result = "Foo";
+						break;
+					case 5:
+						result = "Bar";
+						break;
+					case 7:
+						result = "Qix";
+						break;
+					}
+				}
+			}
 		}
 		return result;
 	}

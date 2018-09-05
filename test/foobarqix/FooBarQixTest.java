@@ -24,5 +24,8 @@ public class FooBarQixTest {
 		assertEquals("Foo", fbq.compute("6"));
 		assertEquals("Bar", fbq.compute("10"));
 		assertEquals("Qix", fbq.compute("14"));
+		assertEquals("Foo", fbq.compute("13"));
+		assertEquals("Bar", fbq.compute("10"));
+		assertEquals("Qix", fbq.compute("17"));
 	}
 }
