@@ -14,7 +14,9 @@ public class FooBarQixTest {
 		MockitoAnnotations.initMocks(this);
 	}
 	@Test
-	public void getStringShouldReturnNumberIfNoReplacement() throws Exception {
-		assertEquals("1", fbq.getString(1));
+	public void computeShouldReturnNumberIfNoReplacement() throws Exception {
+		assertEquals("1", fbq.compute("1"));
+		assertEquals("2", fbq.compute("2"));
+		assertEquals("11", fbq.compute("11"));
 	}
 }
