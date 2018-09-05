@@ -4,9 +4,9 @@ public class FooBarQix {
 	private static int[] toBeReplaced = {3, 5, 7};
 
 	public String compute(String number) {
-		String result = number;
-			if(!(divisibleReplacement(number).isEmpty()) || !(containsReplacement(number).isEmpty())) {
-				result = divisibleReplacement(number) + containsReplacement(number);
+		String result = divisibleReplacement(number) + containsReplacement(number);
+			if(divisibleReplacement(number).isEmpty() && containsReplacement(number).isEmpty()) {
+				result = number;
 			}
 		return result;
 	}
