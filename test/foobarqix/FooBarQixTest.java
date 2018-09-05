@@ -19,4 +19,10 @@ public class FooBarQixTest {
 		assertEquals("2", fbq.compute("2"));
 		assertEquals("11", fbq.compute("11"));
 	}
+	@Test
+	public void computeShouldReturnNumberReplacement() throws Exception {
+		assertEquals("Foo", fbq.compute("6"));
+		assertEquals("Bar", fbq.compute("10"));
+		assertEquals("Qix", fbq.compute("14"));
+	}
 }
