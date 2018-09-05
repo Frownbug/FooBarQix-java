@@ -27,5 +27,10 @@ public class FooBarQixTest {
 		assertEquals("Foo", fbq.compute("13"));
 		assertEquals("Bar", fbq.compute("10"));
 		assertEquals("Qix", fbq.compute("17"));
+		assertEquals("FooFoo", fbq.compute("3"));
+		assertEquals("BarBar", fbq.compute("5"));
+		assertEquals("QixQix", fbq.compute("7"));
+		assertEquals("FooBarBar", fbq.compute("15"));
+		assertEquals("FooBarQixBar", fbq.compute("105"));
 	}
 }

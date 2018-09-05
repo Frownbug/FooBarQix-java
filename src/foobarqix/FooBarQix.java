@@ -5,38 +5,45 @@ public class FooBarQix {
 
 	public String compute(String number) {
 		String result = number;
+			if(!(divisibleReplacement(number).isEmpty()) || !(containsReplacement(number).isEmpty())) {
+				result = divisibleReplacement(number) + containsReplacement(number);
+			}
+		return result;
+	}
+	private String divisibleReplacement(String number) {
+		String divisible = "";
 		for(int replacee : toBeReplaced){
 			if(Integer.parseInt(number) % replacee == 0) {
-				switch(replacee) {
-				case 3:
-					result = "Foo";
-					break;
-				case 5:
-					result = "Bar";
-					break;
-				case 7:
-					result = "Qix";
-					break;
-				}
+				divisible += replacement(replacee);
 			}
-			String[] digits = number.split("");
+		}
+		return divisible;
+	}
+	private String containsReplacement(String number) {
+		String contains = "";
+		String[] digits = number.split("");
+		for(int replacee : toBeReplaced) {
 			for(String digit : digits) {
 				if(digit.equals(Integer.toString(replacee))) {
-					//repeated code
-					switch(replacee) {
-					case 3:
-						result = "Foo";
-						break;
-					case 5:
-						result = "Bar";
-						break;
-					case 7:
-						result = "Qix";
-						break;
-					}
+					contains += replacement(replacee);
 				}
 			}
 		}
-		return result;
+		return contains;
+	}
+	private String replacement(int replacee) {
+		String replacement = "";
+		switch(replacee) {
+		case 3:
+			replacement = "Foo";
+			break;
+		case 5:
+			replacement = "Bar";
+			break;
+		case 7:
+			replacement = "Qix";
+			break;
+		}
+		return replacement;
 	}
 }
